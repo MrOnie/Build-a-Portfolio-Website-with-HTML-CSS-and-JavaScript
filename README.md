@@ -2,7 +2,7 @@
 
 ## Summary
 
-This project is a single-page portfolio website for Ronie Martínez, an AI & Machine Learning Engineer and Developer. The website is built with HTML, CSS, and JavaScript, and it is fully responsive. It showcases his skills, experience, and projects in a clean, modern, and interactive way.
+This project is a single-page portfolio website for Ronie Martínez, an AI & Machine Learning Engineer and Developer. The website is built with HTML, CSS, and JavaScript, and it is fully responsive. It showcases his skills, experience, and projects in a clean, modern, and interactive way. Available at https://build-a-portfolio-website-with-html.vercel.app/
 
 ## Solution and Approach
 
