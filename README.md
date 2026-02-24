@@ -21,11 +21,6 @@ The project was developed using the following technologies:
 ├── css
 │   └── master.css
 ├── images
-│   ├── BC.png
-│   ├── LPDR.png
-│   ├── PML.jpg
-│   ├── profile_RM.png
-│   └── Valv.png
 ├── js
 │   └── main.js
 ├── index.html
