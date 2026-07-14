@@ -237,3 +237,89 @@ const generatePdf = () => {
 };
 
 document.getElementById('download-cv-btn').addEventListener('click', generatePdf);
+
+// Mobile Menu Toggle
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const icon = mobileMenuBtn.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+        } else {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        }
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-item').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                navLinks.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+    });
+}
+
+// Dark Mode Toggle
+const themeToggleBtn = document.querySelector('.theme-toggle-btn');
+const currentTheme = localStorage.getItem('theme');
+
+// Check local storage
+if (currentTheme) {
+    document.body.classList.add(currentTheme);
+    if (currentTheme === 'dark-mode' && themeToggleBtn) {
+        themeToggleBtn.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+    }
+}
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const icon = themeToggleBtn.querySelector('i');
+        
+        let theme = 'light-mode';
+        if (document.body.classList.contains('dark-mode')) {
+            theme = 'dark-mode';
+            icon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            icon.classList.replace('fa-sun', 'fa-moon');
+        }
+        localStorage.setItem('theme', theme);
+    });
+}
+
+// ScrollSpy with IntersectionObserver
+const sections = document.querySelectorAll('section');
+const navItems = document.querySelectorAll('.nav-item');
+
+const observerOptions = {
+    root: null,
+    rootMargin: '-50% 0px -50% 0px', // Trigger when section is in the middle 50% of viewport
+    threshold: 0
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const currentId = entry.target.getAttribute('id');
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${currentId}`) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    });
+}, observerOptions);
+
+sections.forEach(section => {
+    observer.observe(section);
+});
