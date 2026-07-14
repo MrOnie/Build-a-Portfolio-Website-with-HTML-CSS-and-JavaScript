@@ -480,3 +480,24 @@ nav a.active {
         margin: 10px 0;
     }
 }
+
+/* Action Buttons Container */
+.action-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#about .btn.btn-outline, #about .btn.btn-outline:visited {
+    background: transparent;
+    border: 2px solid var(--nav-bg);
+    color: var(--nav-bg);
+}
+
+#about .btn.btn-outline:hover {
+    background: var(--nav-bg);
+    color: var(--nav-text);
+}
+

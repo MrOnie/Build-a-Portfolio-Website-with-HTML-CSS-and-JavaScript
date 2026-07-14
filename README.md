@@ -38,7 +38,10 @@ The project was developed using the following technologies:
     *   Image hover effects in the projects section.
     *   **Interactive Skill Icons:** Subtle animated icons appear on hover for skills (e.g., spinning gear for backend, pulsing for frontend).
     *   **Navigation Underline Effect:** Menu options display a dynamic underline on hover.
-*   **SVG Icons:** The website uses SVG icons for a clean and modern look.
+*   **CV Export Options:** The website provides two ways to download the CV:
+    *   **Dynamic PDF:** A client-side generation (using `pdfmake`) that parses the live content of the portfolio to construct a high-quality, formatted "Harvard style" PDF.
+    *   **Static .tex:** Direct download of a `cv_harvard.tex` file, containing the entire curriculum vitae mapped to a pure LaTeX format for Overleaf or local compilation.
+*   **SVG Icons:** The website uses SVG and FontAwesome icons for a clean and modern look.
 
 ## Development Process
 
@@ -49,7 +52,8 @@ The development process was divided into the following tasks:
 3.  **CSS Styling:** The website was styled with CSS to create a clean, modern, and professional design. The styling includes a responsive layout, a grid for the experience, teaching, research, and publications sections, and several other visual enhancements.
 4.  **JavaScript Interactivity:** JavaScript was used to add smooth scrolling, collapsible sections, and scroll animations.
 5.  **Refinement and Polishing:** The website was refined with additional sections, improved styling, and more interactive elements.
-6.  **Beta Testing:** The website was thoroughly tested to ensure that it is free of bugs and works as expected on different devices and browsers.
+6.  **CV Export Integration:** Added `pdfmake` for dynamic PDF generation and mapped all content to a standard `.tex` LaTeX file for direct academic download.
+7.  **Beta Testing:** The website was thoroughly tested to ensure that it is free of bugs and works as expected on different devices and browsers.
 
 ## Key Takeaways
 
